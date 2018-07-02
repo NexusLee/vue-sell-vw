@@ -41,6 +41,6 @@
   }
 </script>
 
-<style scoped>
+<style lang="scss">
   @import "./header.scss";
 </style>
