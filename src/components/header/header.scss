@@ -15,8 +15,13 @@
         margin: 2px 0 8px 0;
         .brand {
           display: inline-block;
+          @include bg-image('brand');
+          background-repeat: no-repeat;
+        }
+        .brand.ignore {
           width: 30px;
           height: 18px;
+          background-size: 30px 18px;
         }
       }
     }

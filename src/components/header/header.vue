@@ -6,7 +6,7 @@
       </div>
       <div class="content">
         <div class="title">
-          <span class="brand"></span>
+          <span class="brand ignore"></span>
           <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">
@@ -42,5 +42,6 @@
 </script>
 
 <style lang="scss">
+  @import "../../common/scss/mixin.scss";
   @import "./header.scss";
 </style>
