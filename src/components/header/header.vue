@@ -42,6 +42,6 @@
 </script>
 
 <style lang="scss">
-  @import "../../common/scss/mixin.scss";
+  /*@import "../../common/scss/mixin.scss";*/
   @import "./header.scss";
 </style>

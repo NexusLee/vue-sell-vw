@@ -17,11 +17,21 @@
           display: inline-block;
           @include bg-image('brand');
           background-repeat: no-repeat;
-        }
-        .brand.ignore {
+          vertical-align: top;
           width: 30px;
           height: 18px;
           background-size: 30px 18px;
+        }
+        .brand.ignore {
+          /*width: 30px;
+          height: 18px;
+          background-size: 30px 18px;*/
+        }
+        .name {
+          margin-left: 6px;
+          font-size: 16px;
+          line-height: 18px;
+          font-weight: bold;
         }
       }
     }
