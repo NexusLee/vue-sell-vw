@@ -2,35 +2,30 @@
   color: #ffffff;
   background-color: #000000;
   .content-wrapper {
-    padding: 24px 12px 18px 24px;
+    padding: 48px 24px 36px 48px;
     font-size: 0;
     .avatar {
       display: inline-block;
     }
     .content {
       display: inline-block;
-      margin-left: 16px;
-      font-size: 14px;
+      margin-left: 32px;
+      font-size: 28px;
       .title {
-        margin: 2px 0 8px 0;
+        margin: 4px 0 16px 0;
         .brand {
           display: inline-block;
           @include bg-image('brand');
           background-repeat: no-repeat;
           vertical-align: top;
-          width: 30px;
-          height: 18px;
-          background-size: 30px 18px;
-        }
-        .brand.ignore {
-          /*width: 30px;
-          height: 18px;
-          background-size: 30px 18px;*/
+          width: 60px;
+          height: 36px;
+          background-size: 60px 36px;
         }
         .name {
-          margin-left: 6px;
-          font-size: 16px;
-          line-height: 18px;
+          margin-left: 12px;
+          font-size: 32px;
+          line-height: 36px;
           font-weight: bold;
         }
       }
