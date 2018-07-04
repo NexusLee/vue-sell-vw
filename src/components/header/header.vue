@@ -13,9 +13,12 @@
           {{seller.description}}/{{seller.deliveryTime}} 分钟送达
         </div>
         <div v-if="seller.supports" class="supports">
-          <span class="icon"></span>
+          <span class="icon" :class="classMap[seller.supports[0].type]"></span>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
+      </div>
+      <div v-if="seller.supports" class="support-count">
+        <span class="count">{{seller.supports.length}}</span>
       </div>
     </div>
     <div class="bulltin-wrapper"></div>
@@ -32,11 +35,12 @@
     },
     data () {
       return {
-
+        classMap: []
       }
     },
     created () {
       console.log(this.seller)
+      this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     }
   }
 </script>
