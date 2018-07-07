@@ -27,7 +27,9 @@
       <i class="icon-keyboard_arrow_right"></i>
       <span></span>
     </div>
-
+    <div class="background">
+      <img :src="seller.avatar" style="width:100%;height:100%;" />
+    </div>
   </div>
 </template>
 
