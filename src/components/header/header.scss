@@ -145,10 +145,16 @@
     overflow: auto;
     background: rgba(7, 17, 27, 0.8);
     .detail-wrapper {
+      width: 100%;
       min-height: 100%;
       .detail-main {
         margin-top: 128px;
         padding-bottom: 128px;
+        .name {
+          line-height: 32px;
+          text-align: center;
+          font-size: 32px;
+        }
       }
     }
     .detail-close {

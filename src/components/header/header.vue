@@ -32,7 +32,9 @@
     </div>
     <div v-show="detailShow" class="detail">
       <div class="detail-wrapper clearfix">
-        <div class="detail-main"></div>
+        <div class="detail-main">
+          <h1 class="name">{{seller.name}}</h1>
+        </div>
       </div>
       <div class="detail-close">
         <i class="icon-close"></i>
@@ -55,7 +57,6 @@
       }
     },
     created () {
-      console.log(this.seller)
       this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee'];
     },
     methods: {
@@ -67,6 +68,5 @@
 </script>
 
 <style lang="scss">
-  /*@import "../../common/scss/mixin.scss";*/
   @import "./header.scss";
 </style>
