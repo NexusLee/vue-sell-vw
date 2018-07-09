@@ -20,11 +20,8 @@
      }
     },
     computed: {
-
-    },
-    created() {
       starType() {
-       return 'star-' + this.size;
+        return 'star-' + this.size;
       },
       itemClasses() {
         let result = [];
@@ -48,5 +45,5 @@
 </script>
 
 <style lang="scss">
-  @import "./header.scss";
+  @import "./star.scss";
 </style>
