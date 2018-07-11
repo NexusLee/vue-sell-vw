@@ -1,0 +1,16 @@
+.goods {
+  display: flex;
+  position: absolute;
+  top: 348px;
+  bottom: 92px;
+  width: 100%;
+  overflow: hidden;
+  .menu-wrapper {
+    flex: 0 0 80px;
+    width: 80px;
+    background: #f3f5f7;
+  }
+  .foods-wrapper {
+    flex: 1;
+  }
+}
