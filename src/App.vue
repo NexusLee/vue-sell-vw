@@ -65,7 +65,7 @@ export default {
 <style>
   @import "./common/scss/index.scss";
 
-#app {
+/*#app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -90,7 +90,7 @@ body {
 &:after {
    box-sizing: inherit;
  }
-}
+}*/
   /*img {
     width: 100%;
     height: auto;
@@ -124,11 +124,11 @@ body {
   .block {
     margin-top: 15px;
   }*/
-  ul,li {
+  /*ul,li {
     list-style: none outside none;
     margin: 0;
     padding: 0;
-  }
+  }*/
   /*figure {
     display: block;
     margin: 0;
