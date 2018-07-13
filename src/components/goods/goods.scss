@@ -13,8 +13,6 @@
       display: table;
       height: 108px;
       width: 112px;
-      //margin: 0;
-      //padding: 0;
       padding: 0 24px;
       line-height: 28px;
       .icon {
@@ -52,5 +50,65 @@
   }
   .foods-wrapper {
     flex: 1;
+    .title {
+      padding-left: 28px;
+      height: 52px;
+      line-height: 52px;
+      border-left: 4px solid #d9dde1;
+      font-size: 24px;
+      color: rgb(147, 153, 159);
+      background-color: #f3f5f7;
+    }
+    .food-item {
+      display: flex;
+      margin: 36px;
+      padding-bottom: 36px;
+      @include border-1px(rgba(7, 17, 27, 0.1));
+      &:last-child {
+        @include border-none();
+        margin-bottom: 0;
+      }
+      .icon {
+        flex: 0 0 57px;
+        margin-right: 10px;
+      }
+      .content {
+        flex: 1;
+        .name {
+          margin: 4px 0 16px 0;
+          height: 28px;
+          font-size: 28px;
+          line-height: 28px;
+          color: rgb(7, 17, 27);
+        }
+        .desc, .extra {
+          line-height: 20px;
+          font-size: 20px;
+          color: rgb(147, 153, 159);
+        }
+        .desc {
+          margin-bottom: 16px;
+        }
+        .extra {
+          &.count {
+            margin-right: 24px;
+          }
+        }
+        .price {
+          font-weight: 700;
+          line-height: 48px;
+          .now {
+            margin-right: 16px;
+            font-size: 28px;
+            color: rgb(240, 20, 20);
+          }
+          .old {
+            text-decoration: line-through;
+            font-size: 20px;
+            color: rgb(147, 153, 159);
+          }
+        }
+      }
+    }
   }
 }

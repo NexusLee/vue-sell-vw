@@ -18,3 +18,9 @@
   }
 }
 
+@mixin border-none() {
+  &:after {
+    display: none;
+  }
+}
+
