@@ -7,7 +7,7 @@
     <list />-->
     <v-header :seller="seller"></v-header>
     <keep-alive>
-      <router-view></router-view>
+      <router-view :seller="seller"></router-view>
     </keep-alive>
   </div>
 
