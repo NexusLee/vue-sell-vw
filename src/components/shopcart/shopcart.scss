@@ -89,6 +89,13 @@
         font-size: 24px;
         font-weight: 700;
         background-color: #2b333b;
+        &.not-enough {
+          background-color: #2b333b;
+        }
+        &.enough {
+          background-color: #00b43c;
+          color: #ffffff;
+        }
       }
     }
   }
