@@ -1,0 +1,15 @@
+.cartcontrol {
+  font-size: 0;
+  .cart-decrease, .cart-add {
+    display: inline-block;
+    padding: 6px;
+    line-height: 48px;
+    font-size: 48px;
+  }
+  .cart-count {
+    display: inline-block;
+  }
+  .cart-add {
+    color: rgb(0, 160, 220);
+  }
+}

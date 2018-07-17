@@ -26,6 +26,9 @@
               <div class="price">
                 <span class="now">¥{{food.price}}</span><span class="old" v-show="food.oldPrice">¥{{food.oldPrice}}</span>
               </div>
+              <div class="cartcontrol-wrapper">
+                <cartcontrol :food="food"></cartcontrol>
+              </div>
             </div>
           </ul>
         </li>
@@ -39,6 +42,7 @@
 <script type="text/ecmascript-6">
   import BScroll from 'better-scroll';
   import shopcart from '../shopcart/shopcart';
+  import cartcontrol from '../cartcontrol/cartcontrol';
 
   const ERR_OK = 200;
   export default {
@@ -89,7 +93,6 @@
         let foodList = this.$refs.foodList;
         let el = foodList[index];
         this.foodsScroll.scrollToElement(el, 300);
-        console.log(index)
       },
       _initScroll() {
         this.menuScroll = new BScroll(this.$refs.menuWrapper, {
@@ -114,7 +117,8 @@
       }
     },
     components: {
-      shopcart
+      shopcart,
+      cartcontrol
     }
   }
 </script>

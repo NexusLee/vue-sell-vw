@@ -22,7 +22,7 @@
 
 <script type="text/ecmascript-6">
   export default {
-    name: 'Banner',
+    name: 'shopcart',
     props: {
       selectFoods: {
         type: Array,
