@@ -34,7 +34,7 @@
         </li>
       </ul>
     </div>
-    <shopcart :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
+    <shopcart :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice" :selectFoods="selectFoods"></shopcart>
   </div>
 
 </template>
@@ -69,6 +69,18 @@
           }
         }
         return 0;
+      },
+      selectFoods() {
+        console.log(this)
+        let foods = [];
+        this.goods.forEach((good) => {
+          good.foods.forEach((food) => {
+            if(food.count) {
+              foods.push(food);
+            }
+          })
+        })
+        return foods;
       }
     },
     created() {
@@ -77,7 +89,8 @@
 
       this.axios.get(url).then((response) => {
         if(response.status === ERR_OK) {
-          this.goods = Object.assign({}, this.goods, response.data.goods);
+//          this.goods = Object.assign({}, this.goods, response.data.goods);
+          this.goods = response.data.goods;
           this.$nextTick(() => {
             this._initScroll();
             this._calculateHeight();
@@ -99,7 +112,8 @@
           click: true
         });
         this.foodsScroll = new BScroll(this.$refs.foodsWrapper, {
-          probeType: 3
+          probeType: 3,
+          click: true
         });
         this.foodsScroll.on('scroll', (pos) => {
           this.scrollY = Math.abs(Math.round(pos.y));
