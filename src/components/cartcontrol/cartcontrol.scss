@@ -9,7 +9,7 @@
     }
     &.move-enter, &.move-leave-active {
       opacity: 0;
-      transform: translate3D(48px, 0, 0);
+      transform: translate3d(48px, 0, 0);
       .inner {
         transform: rotate(180deg);
       }

@@ -27,14 +27,14 @@
                 <span class="now">¥{{food.price}}</span><span class="old" v-show="food.oldPrice">¥{{food.oldPrice}}</span>
               </div>
               <div class="cartcontrol-wrapper">
-                <cartcontrol :food="food"></cartcontrol>
+                <cartcontrol @add="addFood" :food="food"></cartcontrol>
               </div>
             </div>
           </ul>
         </li>
       </ul>
     </div>
-    <shopcart :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice" :selectFoods="selectFoods"></shopcart>
+    <shopcart ref="shopcart" :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice" :selectFoods="selectFoods"></shopcart>
   </div>
 
 </template>
@@ -89,7 +89,6 @@
 
       this.axios.get(url).then((response) => {
         if(response.status === ERR_OK) {
-//          this.goods = Object.assign({}, this.goods, response.data.goods);
           this.goods = response.data.goods;
           this.$nextTick(() => {
             this._initScroll();
@@ -106,6 +105,14 @@
         let foodList = this.$refs.foodList;
         let el = foodList[index];
         this.foodsScroll.scrollToElement(el, 300);
+      },
+      addFood(target) {
+        this._drop(target);
+      },
+      _drop(target) {
+        this.$nextTick(() => {
+          this.$refs.shopcart.drop(target);
+        })
       },
       _initScroll() {
         this.menuScroll = new BScroll(this.$refs.menuWrapper, {
