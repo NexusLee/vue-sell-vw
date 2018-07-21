@@ -115,4 +115,40 @@
       }
     }
   }
+  .shopcart-list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    &.fold-enter-active, &.fold-leave-active {
+      transition: all 0.5s;
+      transform: translate3d(0, -100%, 0);
+    }
+    &.fold-enter, &.fold-leave-active {
+      transform: translate3d(0, 0, 0);
+    }
+    .list-header {
+      height: 80px;
+      line-height: 80px;
+      padding: 0 36px;
+      background-color: #f3f5f7;
+      border-bottom: 2px solid #rgba(7, 17, 27, .1);
+      .title {
+        float: left;
+        font-size: 28px;
+        color: rgb(7, 17, 27)
+      }
+      .empty {
+        float: right;
+        font-size: 24px;
+        color: rgb(0, 160, 220)
+      }
+    }
+    .list-content {
+      padding: 0 36px;
+      max-height: 217px;
+      background-color: #ffffff;
+    }
+  }
 }

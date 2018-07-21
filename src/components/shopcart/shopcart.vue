@@ -1,6 +1,6 @@
 <template>
   <div class="shopcart">
-    <div class="content">
+    <div class="content" @click="toggleList">
       <div class="content-left">
         <div class="logo-wrapper">
           <div class="logo" :class="{'highlight': totalCount > 0}">
@@ -26,10 +26,32 @@
           </transition>
         </div>
     </div>
+    <transition name="fold">
+      <div class="shopcart-list" v-show="listShow">
+        <div class="list-headeer">
+          <h1 class="title"购物车></h1>
+          <span class="empty">清空</span>
+        </div>
+        <div class="list-content">
+          <ul>
+            <li class="food" v-for="food in selectFoods">
+              <span class="name">{{food.name}}</span>
+              <div class="price">
+                <span>¥ {{food.price*food.count}}</span>
+              </div>
+              <div class="cartcontrol-wrapper">
+                <cartcontrol :food="food"></cartcontrol>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
+  import cartcontrol from '../cartcontrol/cartcontrol';
   export default {
     name: 'shopcart',
     props: {
@@ -72,7 +94,8 @@
             show: false
           }
         ],
-        dropBalls: []
+        dropBalls: [],
+        fold: true
       }
     },
     computed: {
@@ -106,6 +129,15 @@
         }else{
           return 'enough';
         }
+      },
+      listShow() {
+        if(!this.totalCount) {
+          this.fold = true;
+          return false;
+        }
+        let show = !this.fold;
+        console.log(show)
+        return show;
       }
     },
     methods: {
@@ -154,7 +186,18 @@
           ball.show = false;
           el.style.display = 'none';
         }
+      },
+      toggleList() {
+        console.log(this.totalCount)
+        if(!this.totalCount) {
+          return;
+        }
+        console.log(this.fold)
+        this.fold = !this.fold;
       }
+    },
+    components: {
+      cartcontrol
     }
   }
 </script>
