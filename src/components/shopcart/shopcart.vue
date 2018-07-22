@@ -28,11 +28,11 @@
     </div>
     <transition name="fold">
       <div class="shopcart-list" v-show="listShow">
-        <div class="list-headeer">
-          <h1 class="title"购物车></h1>
+        <div class="list-header">
+          <h1 class="title">购物车</h1>
           <span class="empty">清空</span>
         </div>
-        <div class="list-content">
+        <div class="list-content" ref="listContent">
           <ul>
             <li class="food" v-for="food in selectFoods">
               <span class="name">{{food.name}}</span>
@@ -52,6 +52,7 @@
 
 <script type="text/ecmascript-6">
   import cartcontrol from '../cartcontrol/cartcontrol';
+  import BScroll from 'better-scroll';
   export default {
     name: 'shopcart',
     props: {
@@ -131,12 +132,22 @@
         }
       },
       listShow() {
-        if(!this.totalCount) {
+        if (!this.totalCount) {
           this.fold = true;
           return false;
         }
         let show = !this.fold;
-        console.log(show)
+        if (show) {
+          this.$nextTick(() => {
+            if (!this.scroll) {
+            this.scroll = new BScroll(this.$refs.listContent, {
+              click: true
+            });
+          } else {
+            this.scroll.refresh();
+          }
+        });
+        }
         return show;
       }
     },
@@ -188,11 +199,9 @@
         }
       },
       toggleList() {
-        console.log(this.totalCount)
-        if(!this.totalCount) {
+        if (!this.totalCount) {
           return;
         }
-        console.log(this.fold)
         this.fold = !this.fold;
       }
     },
