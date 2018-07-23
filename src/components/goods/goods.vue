@@ -71,7 +71,6 @@
         return 0;
       },
       selectFoods() {
-        console.log(this)
         let foods = [];
         this.goods.forEach((good) => {
           good.foods.forEach((food) => {
