@@ -119,6 +119,7 @@
         this.$refs.food.show();
       },
       addFood(target) {
+        console.log("123")
         this._drop(target);
       },
       _drop(target) {
