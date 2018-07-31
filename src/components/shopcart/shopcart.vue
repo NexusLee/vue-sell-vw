@@ -50,9 +50,7 @@
       </transition>
     </div>
     <transition name="fade">
-      <div class="list-mask" v-show="listShow" @click="hideList">
-
-      </div>
+      <div class="list-mask" v-show="listShow" @click="hideList"></div>
     </transition>
   </div>
 </template>
