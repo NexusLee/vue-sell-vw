@@ -38,6 +38,7 @@
     }
   }
   .content {
+    position: relative;
     padding: 36px;
     .title {
       line-height: 28px;
@@ -73,32 +74,47 @@
         color: rgb(147, 153, 159);
       }
     }
-  }
-  .cartcontrol-wrapper {
-    position: absolute;
-    right: 24px;
-    bottom: 24px;
-  }
-  .buy {
-    position: absolute;
-    right: 36px;
-    bottom: 36px;
-    z-index: 10;
-    height: 48px;
-    line-height: 48px;
-    padding: 0 24px;
-    box-sizing: border-box;
-    font-size: 20px;
-    border-radius: 24px;
-    color: #ffffff;
-    background-color: rgb(0, 160, 220);
-    opacity: 1;
-    &.fade-enter, &.fade-leave-active {
-      transition: all 0.2s;
+    .cartcontrol-wrapper {
+      position: absolute;
+      right: 24px;
+      bottom: 24px;
     }
-    &.fade-enter-active, &.fade-leave-active {
-      opacity: 0;
-      z-index: -1;
+    .buy {
+      position: absolute;
+      right: 36px;
+      bottom: 36px;
+      z-index: 10;
+      height: 48px;
+      line-height: 48px;
+      padding: 0 24px;
+      box-sizing: border-box;
+      font-size: 20px;
+      border-radius: 24px;
+      color: #ffffff;
+      background-color: rgb(0, 160, 220);
+      opacity: 1;
+      &.fade-enter, &.fade-leave-active {
+        transition: all 0.2s;
+      }
+      &.fade-enter-active, &.fade-leave-active {
+        opacity: 0;
+        z-index: -1;
+      }
+    }
+  }
+  .info {
+    padding: 36px;
+    .title {
+      line-height: 28px;
+      margin-bottom: 12px;
+      font-size: 28px;
+      color: rgb(7, 17, 27);
+    }
+    .text {
+      line-height: 48px;
+      padding: 0 16px;
+      font-size: 24px;
+      color: rgb(77, 85, 93);
     }
   }
 }
