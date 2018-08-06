@@ -125,5 +125,52 @@
       font-size: 28px;
       color: rgb(7, 17, 27);
     }
+    .rating-wrapper {
+      padding: 0 36px;
+      .rating-item {
+        position: relative;
+        padding: 32px 0;
+        @include border-1px(rgba(7, 17, 27, 0.1));
+        .user {
+          position: absolute;
+          right: 0;
+          top: 32px;
+          line-height: 24px;
+          font-size: 0;
+          .name {
+            display: inline-block;
+            margin-right: 12px;
+            vertical-align: top;
+            font-size: 20px;
+            color: rgb(147, 153, 159);
+          }
+          .avatar {
+            border-radius: 50%;
+          }
+        }
+        .time {
+          margin-bottom: 12px;
+          line-height: 24px;
+          font-size: 20px;
+          color: rgb(147, 153, 159);
+        }
+        .text {
+          line-height: 32px;
+          font-size: 24px;
+          color: rgb(7, 17, 27);
+          .icon-thumb_up, .icon-thumb_down {
+            margin-right: 8px;
+            line-height: 48px;
+            font-size: 24px;
+          }
+          .icon-thumb_up {
+            color: rgb(0, 160, 220);
+          }
+          .icon-thumb_down {
+            color: rgb(147, 153, 159);
+          }
+        }
+      }
+    }
   }
 }
