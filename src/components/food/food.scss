@@ -160,7 +160,7 @@
           color: rgb(7, 17, 27);
           .icon-thumb_up, .icon-thumb_down {
             margin-right: 8px;
-            line-height: 48px;
+            line-height: 32px;
             font-size: 24px;
           }
           .icon-thumb_up {
@@ -170,6 +170,11 @@
             color: rgb(147, 153, 159);
           }
         }
+      }
+      .no-rating {
+        padding: 32px 0;
+        font-size: 24px;
+        color: rgb(147, 153, 159);
       }
     }
   }
